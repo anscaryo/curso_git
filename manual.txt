@@ -1,0 +1,27 @@
+##	Apuntes tomados del directo de mouredev en twitch
+##	Empiezo con el curso de HolaMundo en youtube.
+
+·····##	ayuda en la configuración de git	##·····
+git config -h
+
+
+//	Configurar el mi nombre en git, para todos los proyectos:
+git config --global user.name "anscaryo"
+//	Configurar el correo electronico:
+git config --global user.email anscaryo@gmail.com
+//	Para configurar nuestro editor de texto:
+git config --global core.editor "code --wait"
+//	Para ver la configuración global:
+git config --global -e
+
+//	Cuando hay varios usuarios trabajando en el mismo trabajo en 
+//distintos sistemas operativos hay que configurar la siguiente 
+//función. en windows se configura con true, en linux y mac en input
+git config --global core.autocrlf (windows) true, (linux/mac) input
+
+***	Para inicializar un proyecto en git	***
+
+git init
+
+
+
