@@ -21,7 +21,71 @@ git config --global core.autocrlf (windows) true, (linux/mac) input
 
 ***	Para inicializar un proyecto en git	***
 
-git init
+git init	//para anular esta orden con eliminar el directorio .git es suficiente. "rm -rf .git"
+
+//	con git status nos muestra el estado actual de nuestro repositorio.
+git status	//alias	gst
+//	para añadir archivos que se van a seguir, para quitar todos los añadidos usamos "git reset"
+git add "y los nobres de los archivos a seguir, o la extensión"
 
 
+//	para comprometer un trabajo, lo hacemos con el siguiente comando.
+git commit -m "Commit inicial"	//Entre comillas se debe incluir un texto con sentido.
 
+//	Despues de cada modificación, hay que añadirlo al repositorio con add y realizar un commit
+//	con git commit, nos abre el editor y podemos incluir un comentario.
+
+//	Tambien al eliminar un archivo del directorio hay que añaidir el archivo al repositorio con add
+//y despues hacer un commit -m "" para que surja efecto.
+
+//	Con el comando git rm ... nos ahorramos los dos pasos anteriores. Con restore recuperamos el archivo elimiando.
+
+//	Para restaurar un archivo eliminado y añadido al repositorio 
+git restore -S "nombre del archivo"	//	Lo eliminamos del add.
+git restore "nombre del archivo"	//	Lo restauramos en el directorio
+
+//	Para renombrar un archivo 
+git mv "nombre_viejo" "nombre_nuevo"
+
+//	Ignorar archivos en el repositorio.
+//	Creamos un archivo .gitignore donde incluimos archivos y carpetas que deban ser ignorados por git.
+
+//	alternativa a git status, mas elegante.
+git status -s	// alias gss
+
+//	Para ver los cambios realizados a un archivo.
+git diff	//	Abre un editor donde muestra los cambios realizados, lo añadido y lo eliminado.
+			"diff --git a/archivo1.py b/archivo1.py
+			index 9dde490..a391e63 100644
+			--- a/archivo1.py
+			+++ b/archivo1.py
+			@@ -1 +1,3 @@
+			 print(f"Esto es un curso de git")
+			+felipe = "Chanchito feliz"
+			+print(f"felipe es {felipe}")
+			\ No newline at end of file"
+
+//	Esto mismo lo podemos optener tras añadirlo al repositorio con 
+git diff --staged
+
+//	Revisar el historial del repositorio
+git log
+
+//	Otra opición más corta es con
+git log --oneline
+
+//	Añadir ramas/branch esto se usa para hacer pruebas y modificaciones sin modificar la rama principal
+
+//	Para saber en que rama estamos
+git branch
+
+//	para crear una rama
+git branch "nombre de la rama"
+
+//	Cambia de una rama a otra
+git switch "nombre de la rama"
+
+//	para traer archivos de una rama a otra:
+git merge "nombre de la rama a traer"
+
+git checkout -b ramab
